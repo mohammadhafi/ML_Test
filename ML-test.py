@@ -10,7 +10,7 @@ data['Date']=pd.to_datetime(data['Date'])
 data=data.sort_values('Date',ascending=True)
 data=data[data['Date']>datetime(year=1951,month=1,day=3)]
 #make rolling!
-data['day_5'] = 44
+data['day_5'] = 0
 data['day_5'] =data['Close'].rolling(5).mean()
 data['day_5'] =data['day_5'].shift()
 data=data.dropna(axis=0)
